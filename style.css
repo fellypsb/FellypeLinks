@@ -25,7 +25,7 @@
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
-  --highlight-color: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.2);
   --switch-bg-url: url(./assets/Sun.svg);
   --footer-color: rgba(0, 0, 0, 0.1);
 }
@@ -90,14 +90,17 @@ body {
 
   position: absolute;
   top: 50%;
-  left: 0;
+  animation: slide-back 0.4s forwards;
   z-index: 1;
   transform: translateY(-50%);
 }
 /*sendo o comando de cima para o root e o de baixo para versão alternativa light*/
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -182,5 +185,22 @@ footer a:hover {
 
   .light {
     --bg-url: url(./assets/bg-desktop-lightof.png);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-back {
+  from {
+    right: 0;
+  }
+  to {
+    right: 50%;
   }
 }
