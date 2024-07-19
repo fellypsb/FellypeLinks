@@ -10,7 +10,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-desktopof.png);
+  --bg-url: url(./assets/bg-mobileof.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(255, 255, 255, 0.02);
@@ -21,7 +21,7 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-desktop-lightof.png);
+  --bg-url: url(./assets/bg-mobile-lightof.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -44,10 +44,12 @@ body * {
 /*ficando com a ordem de comando: background image color repeat position/size*/
 body {
   background: var(--bg-url) no-repeat center/cover;
+  height: 100vh;
 }
 /*width = largura e margin = margem border = borda padding = preenchimento */
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*border: 1px solid red;*/
   margin: 56px auto 0px;
   padding: 0 24px;
@@ -171,4 +173,14 @@ footer {
 
 footer a:hover {
   text-decoration: var(--footer-color);
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktopof.png);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-lightof.png);
+  }
 }
